@@ -6,11 +6,11 @@ This is a simple game of tic-tac-toe, based on an SPA, and utilizes an API to si
 
 ## User stories
 
-  1. As a user, I want to be able to start a new game
-  2. as a user, I want to be able to play with a friend
-  3. As a user, I want to be able to sign in and out
-  4. As a user, I want to know who won
-  5. As a user, I want to have a record of past games
+  1. As a user, I want to be able to start a new game.
+  2. as a user, I want to be able to play with a friend.
+  3. As a user, I want to be able to sign in and out.
+  4. As a user, I want to know who won.
+  5. As a user, I want to be able to click on a square and have an X or O populate.
 
 ## Wireframes
 
