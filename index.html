@@ -12,7 +12,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <section>
+      <section id="before-sign-in">
         <form id="sign-up">
           <fieldset>
             <legend>Sign Up</legend>
@@ -40,6 +40,10 @@
           </fieldset>
         </form>
 
+      </section>
+
+      <section id="after-sign-in">
+
         <hr>
 
         <form id="change-pw">
@@ -62,37 +66,39 @@
           <div id="sign-out-error-display"></div>
         </fieldset>
 
+
+
+        <br>
+
+        <hr>
+
+        <br>
+
+        <section id="game-display">
+          <div class="container">
+            <div class="row">
+              <div class="col-4 box 1" id="box1">1</div>
+              <div class="col-4 box 2" id="box2">2</div>
+              <div class="col-4 box" id="box3">3</div>
+            </div>
+
+            <div class="row">
+              <div class="col-4 box" id="box4">4</div>
+              <div class="col-4 box" id="box5">5</div>
+              <div class="col-4 box" id="box6">6</div>
+            </div>
+
+            <div class="row">
+              <div class="col-4 box" id="box7">7</div>
+              <div class="col-4 box" id="box8">8</div>
+              <div class="col-4 box" id="box9">9</div>
+            </div>
+          </div>
+        </section>
       </section>
 
-      <br>
-
-      <hr>
-
-      <br>
-
-      <section>
-        <div class="container" id="game-display">
-          <div class="row">
-            <div class="col-4 box" id="box1">1</div>
-            <div class="col-4 box" id="box2">2</div>
-            <div class="col-4 box" id="box3">3</div>
-          </div>
-
-          <div class="row">
-            <div class="col-4 box" id="box4">4</div>
-            <div class="col-4 box" id="box5">5</div>
-            <div class="col-4 box" id="box6">6</div>
-          </div>
-
-          <div class="row">
-            <div class="col-4 box" id="box7">7</div>
-            <div class="col-4 box" id="box8">8</div>
-            <div class="col-4 box" id="box9">9</div>
-          </div>
-        </div>
-      </section>
-
-        <div class="game-error-display"></div>
+        <div id="winner-display"></div>
+        <div id="game-error-display"></div>
 
 
     </body>

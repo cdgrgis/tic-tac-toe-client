@@ -23,12 +23,14 @@ const onSignUpFailure = err => {
 
 const onSignInSuccess = responseData => {
   $('#sign-in-display').text('Sign in successful')
-  console.log(responseData)
 
   store.user = responseData.user
   console.log('store is: ', store)
 
   $('form').trigger('reset')
+
+  $('#after-sign-in').show()
+  $('#before-sign-in').hide()
 
   setTimeout(() => {
     $('#sign-in-display').text('')
