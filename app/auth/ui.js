@@ -78,7 +78,7 @@ const onChangePwFailure = err => {
   console.error(err)
 
   $('#change-pw-error-display').text('Change password failed')
-
+grn
   setTimeout(() => {
     $('#change-pw-error-display').text('')
   }, 5000)
