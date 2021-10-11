@@ -21,6 +21,8 @@
             <input name="credentials[password_confirmation]" type="password" placeholder="Password Confirmation" required>
 
             <button>Sign Up</button>
+            <div id="sign-up-display"></div>
+            <div id="sign-up-error-display"></div>
           </fieldset>
         </form>
 
@@ -33,6 +35,8 @@
             <input name="credentials[password]" type="password" placeholder="Password" required>
 
             <button>Sign In</button>
+            <div id="sign-in-display"></div>
+            <div id="sign-in-error-display"></div>
           </fieldset>
         </form>
 
@@ -45,6 +49,8 @@
             <input name="passwords[new]" type="password" placeholder="New password" required>
 
             <button>Change Password</button>
+            <div id="change-pw-display"></div>
+            <div id="change-pw-error-display"></div>
           </fieldset>
         </form>
 
@@ -52,13 +58,15 @@
 
         <fieldset>
           <button id="sign-out">Sign Out</button>
+          <div id="sign-out-display"></div>
+          <div id="sign-out-error-display"></div>
         </fieldset>
 
       </section>
 
       <section>
         <div id="game-display"></div>
-        <div id="error-display"></div>
+        <div id="game-error-display"></div>
 
       </section>
     </body>

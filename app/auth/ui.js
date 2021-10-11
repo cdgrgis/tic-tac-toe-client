@@ -1,54 +1,87 @@
 const store = require('../store')
 
 const onSignUpSuccess = responseData => {
-  $('#game-display').text('Sign up successful')
+  $('#sign-up-display').text('Sign up successful')
   console.log(responseData)
 
   $('form').trigger('reset')
+
+  setTimeout(() => {
+    $('#sign-up-display').text('')
+  }, 5000)
 }
 
 const onSignUpFailure = err => {
   console.error(err)
-  $('error-display').text('Sign up failed')
+  $('#sign-up-error-display').text('Sign up failed')
+
+
+  setTimeout(() => {
+    $('#sign-up-error-display').text('')
+  }, 5000)
 }
 
 const onSignInSuccess = responseData => {
-  $('#game-display').text('Sign in successful')
+  $('#sign-in-display').text('Sign in successful')
   console.log(responseData)
 
   store.user = responseData.user
   console.log('store is: ', store)
 
   $('form').trigger('reset')
+
+  setTimeout(() => {
+    $('#sign-in-display').text('')
+  }, 5000)
 }
 
 const onSignInFailure = err => {
   console.error(err)
-  $('#error-display').text('Sign in failed')
+ $('#sign-in-error-display').text('Sign in failed')
+
+ setTimeout(() => {
+  $('#sign-in-error-display').text('')
+}, 5000)
 }
 
 
 const onSignOutSuccess = () => {
-  $('#game-display').text('Sign out successful')
+  $('#sign-out-display').text('Sign out successful')
+
+  setTimeout(() => {
+    $('#sign-out-display').text('')
+  }, 5000)
 }
 
 const onSignOutFailure = err => {
   console.error(err)
-  $('#error-display').text('Sign out failed')
+  $('#sign-out-error-display').text('Sign out failed')
+
+  setTimeout(() => {
+    $('#sign-out-error-display').text('')
+  }, 5000)
 }
 
 const onChangePwSuccess = responseData => {
   console.log(responseData)
-  $('#game-display').text('Change password successful')
+  $('#change-pw-display').text('Change password successful')
 
   $('form').trigger('reset')
+
+  setTimeout(() => {
+    $('#change-pw-display').text('')
+  }, 5000)
 }
 
 
 const onChangePwFailure = err => {
   console.error(err)
 
-  $('#error-display').text('Change password failed')
+  $('#change-pw-error-display').text('Change password failed')
+
+  setTimeout(() => {
+    $('#change-pw-error-display').text('')
+  }, 5000)
 }
 
 module.exports = {
