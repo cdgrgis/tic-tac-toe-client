@@ -7,6 +7,7 @@ const onNewGameSuccess = (responseData) => {
   $('#game-display').text('New game success')
 }
 
+
 const onNewGameFailure = (err) => {
   console.error(err)
 

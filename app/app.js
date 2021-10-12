@@ -13,8 +13,8 @@ $(() => {
   $('#change-pw').on('submit', authEvents.onChangePw)
   $('#sign-out').on('click', authEvents.onSignOut)
 
-
-  $('#game-display').on('click', gameEvents.onSelectBox)
+  $('#new-game').on('click', gameEvents.onNewGame)
+  $('#game-display').on('click', gameEvents.onTurn)
 
 
 
