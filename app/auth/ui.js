@@ -29,8 +29,7 @@ const onSignInSuccess = responseData => {
 
   $('form').trigger('reset')
 
-  $('#after-sign-in').show()
-  $('#before-sign-in').hide()
+  
 
   setTimeout(() => {
     $('#sign-in-display').text('')

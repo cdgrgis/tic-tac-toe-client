@@ -4,6 +4,7 @@ const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('../../lib/get-form-fields')
 const functions = require('./event-func')
+const store = require('../store')
 
 
 
@@ -16,23 +17,20 @@ const onNewGame = () => {
     .catch(ui.onNewGameFailure)
 }
 
-<<<<<<< HEAD
-const onSelectBox = (event) => {
-=======
+const onUserTurn = (event) => {
+  const cell = event.target.id
+  console.log(event)
 
-const onTurn = (event) => {
 
->>>>>>> a348192 (Committing in order to pull update from separate device)
-  const id = event.target.id
+  functions.inputToken(cell, functions.determineUserToken)
 
-  functions.inputToken(id, functions.determineUserToken)
 
-<<<<<<< HEAD
   functions.determineWinner()
-=======
-  
 
->>>>>>> a348192 (Committing in order to pull update from separate device)
+
+  api.updateGame(cell)
+    .then(ui.onUserTurnSuccess)
+    .catch(ui.onUserTurnFailure)
 
 }
 
@@ -42,5 +40,5 @@ const onTurn = (event) => {
 
 module.exports = {
   onNewGame,
-  onTurn,
+  onUserTurn,
 }

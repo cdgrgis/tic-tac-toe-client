@@ -14,7 +14,7 @@ $(() => {
   $('#sign-out').on('click', authEvents.onSignOut)
 
   $('#new-game').on('click', gameEvents.onNewGame)
-  $('#game-display').on('click', gameEvents.onTurn)
+  $('#game-display').on('click', gameEvents.onUserTurn)
 
 
 

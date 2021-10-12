@@ -14,7 +14,28 @@ const newGame = () => {
 }
 
 
+const updateGame = cell => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `${config.apiUrl}/games/${store.game._id}`,
+    headers: {
+      Authorization: `Bearer ${store.user.token}`
+    },
+    data: {
+      "game": {
+        "cell": {
+          "index": cell,
+          "value": store.gameToken
+        },
+        "over": store.winner
+      }
+    }
+  })
+}
+
+
 module.exports = {
   newGame,
+  updateGame,
 
 }
