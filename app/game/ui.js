@@ -4,7 +4,11 @@ const functions = require("./event-func")
 
 const onNewGameSuccess = (responseData) => {
   store.game = responseData.game
-  console.log('game: ', store.game)
+  console.log('store.game: ', store.game)
+ 
+  store.count = 0
+
+
 
 
   $('#game-message').text('New game success')
@@ -26,11 +30,11 @@ const onNewGameFailure = (err) => {
 }
 
 
-const onUserTurnSuccess = responseData => {
+const onUserTurnSuccess = (responseData) => {
   store.game = responseData.game
   console.log(store.game)
   if(!store.winner) {
-    $('#game-message').text(`It is Player ${store.gameToken}'s turn`)
+    $('#game-message').text(`It is Player ${store.userToken}'s turn`)
 
     setTimeout(() => {
       $('#game-message').text('')

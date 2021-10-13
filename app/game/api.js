@@ -14,7 +14,7 @@ const newGame = () => {
 }
 
 
-const updateGame = cell => {
+const updateGame = (cell, userToken, winner) => {
   return $.ajax({
     method: 'PATCH',
     url: `${config.apiUrl}/games/${store.game._id}`,
@@ -25,9 +25,9 @@ const updateGame = cell => {
       "game": {
         "cell": {
           "index": cell,
-          "value": store.gameToken
+          "value": userToken
         },
-        "over": store.winner
+        "over": winner
       }
     }
   })
