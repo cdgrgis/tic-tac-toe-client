@@ -1,11 +1,11 @@
 const store = require("../store")
 const gameEvents = require("./events")
-const functions = require("./event-func")
+
 
 const onNewGameSuccess = (responseData) => {
   store.game = responseData.game
   console.log('store.game: ', store.game)
- 
+
   store.count = 0
 
 
