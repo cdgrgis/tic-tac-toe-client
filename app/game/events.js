@@ -18,17 +18,18 @@ const onNewGame = () => {
 }
 
 const onUserTurn = (event) => {
-  const cell = event.target.id
-  console.log(event)
+  const cellId = event.target.id
+  const updateCell = parseInt(cellId[3]) - 1
 
 
-  functions.inputToken(cell, functions.determineUserToken)
+
+  functions.inputToken(cellId, functions.determineUserToken)
 
 
   functions.determineWinner()
 
 
-  api.updateGame(cell)
+  api.updateGame(updateCell)
     .then(ui.onUserTurnSuccess)
     .catch(ui.onUserTurnFailure)
 

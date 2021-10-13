@@ -27,7 +27,8 @@ const onNewGameFailure = (err) => {
 
 
 const onUserTurnSuccess = responseData => {
-  console.log(responseData)
+  store.game = responseData.game
+  console.log(store.game)
   if(!store.winner) {
     $('#game-message').text(`It is Player ${store.gameToken}'s turn`)
 

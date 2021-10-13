@@ -8,12 +8,14 @@ store.count = count
 
 
 const determineUserToken = count => {
-  if (count % 2 === 0) {
+  if (count % 2 === 0 && winner === false) {
     store.gameToken = 'X'
     return 'X'
-  } else {
+  } else if (count % 2 === 1 && winner === false) {
     store.gameToken = 'O'
     return 'O'
+  } else {
+    return ''
   }
 }
 
@@ -66,6 +68,6 @@ module.exports = {
   determineUserToken,
   inputToken,
   determineWinner
-  
+
 
 }
