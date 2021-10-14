@@ -43,11 +43,20 @@ const onSignOut = () => {
     .catch(ui.onSignOutFailure)
 }
 
+
+const onViewGameAmount = () => {
+  api.viewGames()
+    .then(ui.onViewGameAmountSuccess)
+    .catch(ui.onViewGameAmountFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePw,
   onSignOut,
+  onViewGameAmount,
+  
 
 
 }

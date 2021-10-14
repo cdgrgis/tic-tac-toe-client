@@ -29,7 +29,7 @@ const onSignInSuccess = responseData => {
 
   $('form').trigger('reset')
 
-  
+
 
   setTimeout(() => {
     $('#sign-in-display').text('')
@@ -85,6 +85,25 @@ grn
   }, 5000)
 }
 
+
+const onViewGameAmountSuccess = responseData => {
+  store.pastGames = responseData.games
+  console.log("store.pastGames: ", store.pastGames)
+
+
+  if(store.pastGames.length === 0) {
+    $('#view-games-display').text('You have played ' + store.pastGames.length + ' games!\nLet\'s start your first game')
+  } else if (store.pastGames.length > 0 && store.pastGames.length < 50) {
+    $('#view-games-display').text('You have played ' + store.pastGames.length + ' games!\nJust getting started')
+  } else if (store.pastGames.length > 100) {
+    $('#view-games-display').text('You have played ' + store.pastGames.length + ' games!\nCan you believe it?!')
+  }
+
+}
+
+const onViewGameAmountFailure = err => {
+  console.error(err)
+}
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -94,6 +113,8 @@ module.exports = {
   onChangePwFailure,
   onSignOutSuccess,
   onSignOutFailure,
+  onViewGameAmountSuccess,
+  onViewGameAmountFailure,
 
 
 
