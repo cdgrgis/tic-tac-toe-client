@@ -33,9 +33,31 @@ const updateGame = (cell, userToken, winner) => {
   })
 }
 
+const viewGames = () => {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    headers: {
+      Authorization: `Bearer ${store.user.token}`
+    }
+  })
+}
+
+
+const continueGame = (id) => {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + id,
+    headers: {
+      Authorization: `Bearer ${store.user.token}`
+    }
+  })
+}
+
 
 module.exports = {
   newGame,
   updateGame,
+  viewGames,
+  continueGame,
+
 
 }

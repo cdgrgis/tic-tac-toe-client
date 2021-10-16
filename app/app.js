@@ -12,10 +12,21 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-pw').on('submit', authEvents.onChangePw)
   $('#sign-out').on('click', authEvents.onSignOut)
-  $('#view-games').on('click', authEvents.onViewGameAmount)
 
+  $('#view-game-amount').on('click', gameEvents.onViewGameAmount)
+  $('#view-past-games').on('click', gameEvents.onViewPastGames)
   $('#new-game').on('click', gameEvents.onNewGame)
   $('#game-display').on('click', gameEvents.onUserTurn)
+  $('#view-past-games-display').on('click', '.past-game', gameEvents.onContinueGame)
+  $('#custom-tokens').on('submit', gameEvents.onCustomTokens)
+
+
+
+
+
+
+
+  })
 
 
 
@@ -30,4 +41,4 @@ $(() => {
 
 
 
-})
+

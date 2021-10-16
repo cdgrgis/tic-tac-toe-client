@@ -41,14 +41,6 @@ const signOut = () => {
   })
 }
 
-const viewGames = () => {
-  return $.ajax({
-    url: config.apiUrl + '/games',
-    headers: {
-      Authorization: `Bearer ${store.user.token}`
-    }
-  })
-}
 
 
 module.exports = {
@@ -56,5 +48,5 @@ module.exports = {
   signIn,
   changePw,
   signOut,
-  viewGames,
+  
 }
