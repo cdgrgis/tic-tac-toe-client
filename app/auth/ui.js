@@ -2,13 +2,15 @@ const store = require('../store')
 
 const onSignUpSuccess = responseData => {
   $('#sign-up-display').text('Sign up successful')
-  console.log(responseData)
+  console.log('response data: ', responseData)
 
   $('form').trigger('reset')
 
   setTimeout(() => {
     $('#sign-up-display').text('')
   }, 5000)
+
+
 }
 
 const onSignUpFailure = err => {
@@ -96,7 +98,7 @@ module.exports = {
   onChangePwFailure,
   onSignOutSuccess,
   onSignOutFailure,
-  
+
 
 
 

@@ -21,7 +21,7 @@ $(() => {
   $('#custom-tokens').on('submit', gameEvents.onCustomTokens)
 
 
-
+  window.onload = authEvents.onReloadSignIn()
 
 
 
