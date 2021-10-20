@@ -4,6 +4,8 @@ This is a simple game of tic-tac-toe, based on an SPA, and utilizes an API to si
 
 I created this project for my Software Engineering boot camp with General Assembly.
 
+In planning for this projects, I decided to set up the user api functionality first, followed by setting up the html. I continued on to implement the game logic and game api functionality, to finish this project I implemented CSS to style the page.
+
 ## Important Links
 [deployed-client](https://cdgrgis.github.io/tic-tac-toe-client)
 
@@ -14,10 +16,15 @@ I created this project for my Software Engineering boot camp with General Assemb
   3. As a user, I want to be able to sign in and out.
   4. As a user, I want to know who won.
   5. As a user, I want to be able to click on a square and have an X or O populate.
+  6. As a user I want to be able to choose custom tokens
+  7. As a user I want to be able to play against a computer
 
 ## Wireframes
 
-![wire-frame-desktop](https://media.git.generalassemb.ly/user/37795/files/9d06ff80-26f4-11ec-8dae-cef39932f7f6)
+![before-sign-in](https://user-images.githubusercontent.com/88337158/138165922-b6af4fb8-5858-4910-8529-618b88d68cb6.png)
+
+![after-sign-in](https://user-images.githubusercontent.com/88337158/138165957-b261e355-74b8-4de9-975b-498396dd198a.png)
+
 ![wire-frame-mobile](https://media.git.generalassemb.ly/user/37795/files/a98b5800-26f4-11ec-84a9-8d0cc6d62bb8)
 
 
@@ -30,6 +37,7 @@ I created this project for my Software Engineering boot camp with General Assemb
   - Flex Box
 
 ## Unsolved Problems
-  - Still need to add functionality to keep playing past game
-  - Still need to add functionality for playing with a partner at different computers
-  - Would like to eventually set up a computer as an optional opponent
+  - Add modules for all forms
+  - Attach all modules and buttons to side of page
+  - Create AI
+  
