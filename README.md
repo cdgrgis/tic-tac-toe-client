@@ -35,17 +35,20 @@ code
   7. As a user I want to be able to play against a computer
 
 ## Wireframes
+
 #### Before Sign In
-![before-sign-in](https://user-images.githubusercontent.com/88337158/138165922-b6af4fb8-5858-4910-8529-618b88d68cb6.png)
+
+![before-sign-in](https://user-images.githubusercontent.com/88337158/
+138171103-565f5987-322c-4025-b1a1-f91837f3828c.png)
+
 
 #### After Sign In
+
 ![after-sign-in](https://user-images.githubusercontent.com/88337158/138165957-b261e355-74b8-4de9-975b-498396dd198a.png)
 
 #### Mobile 
+
 ![wire-frame-mobile](https://media.git.generalassemb.ly/user/37795/files/a98b5800-26f4-11ec-84a9-8d0cc6d62bb8)
-
-
-
 
 ## Technologies Used
   - JavaScript
