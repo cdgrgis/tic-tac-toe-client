@@ -1,11 +1,157 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Akronim&display=swap');
+
+:root {
+  --purple: #7209b7ff;
+  --ultramarine: #4361eeff;
+  --flickr: #f72585ff;
+  --dodger: #4895efff;
+  --vivid: #4cc9f0ff;
+  --purp2: #560badff;
+  --gogreen: #0ead69ff;
+  --byzantine: #b5179eff;
+}
 
 
-.box {
-  height: 160px;
-  width: 160px;
-  border: 1px solid black;
+body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: var(--ultramarine);
+  font-family: 'Akronim', cursive sans-serif;
+  user-select: none;
+}
+
+legend {
+  margin: 25px 0 25px 0;
+  font-size: 40px;
+  color: lightskyblue;
+  text-shadow: 1px 1px white;
+}
+
+button {
+  background-color: var(--purple);
+  color: var(--flickr);
+
+  font-size: 1.1em;
+
+}
+
+input {
+  height: 2em;
+  background-color: var(--purple);
+  color: var(--vivid);
+}
+
+::placeholder {
+  background-color: var(--vivid);
+  color: var(--purple);
+  font-size: 1.5em;
+
 
 
 }
 
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 160px;
+  width: 160px;
+  border: 1px solid var(--flickr);
+  margin: 15px;
+
+
+  min-height: calc(90% / 3);
+
+  background-color: var(--purple);
+  color: white;
+  font-size: 150px;
+  text-shadow: 4px 4px var(--vivid);
+
+  &:hover {
+    background-color: var(--vivid);
+  }
+
+
+}
+
+.past-container {
+  height: 60vh;
+}
+
+.container {
+  height: 70vh;
+}
+
+.past-games {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.past-game-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+  margin-top: -160px;
+  color: var(--vivid);
+}
+
+.past-game-board {
+  margin-right: 30px;
+}
+
+
+#after-sign-in {
+  display: none;
+}
+
+#game-flex {
+  display: flex;
+
+
+}
+#game-display {
+  display: flex;
+
+  margin: auto;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+
+  max-height: calc(80vh - 75px);
+  max-width: calc(80vh - 75px);
+}
+
+#game-message {
+  font-size: 40px;
+  color: var(--vivid);
+}
+
+#winner-container {
+  display: flex;
+
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+
+  align-items: center;
+}
+
+#winner-display {
+  width: 26vw;
+  margin-top: -90vh;
+  font-size: 60px;
+  background: rgba(76, 201, 240, .6);
+
+}
+
+#view-games-display {
+  color: var(--vivid);
+  font-size: 2em;
+}

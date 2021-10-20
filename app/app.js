@@ -17,7 +17,7 @@ $(() => {
   $('#view-past-games').on('click', gameEvents.onViewPastGames)
   $('#new-game').on('click', gameEvents.onNewGame)
   $('#game-display').on('click', gameEvents.onUserTurn)
-  $('#view-past-games-display').on('click', '.past-game', gameEvents.onContinueGame)
+  $('#view-past-games-display').on('click', '.continue-past-game', gameEvents.onContinueGame)
   $('#custom-tokens').on('submit', gameEvents.onCustomTokens)
 
 

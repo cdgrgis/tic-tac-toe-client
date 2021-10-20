@@ -4,6 +4,8 @@ const onSignUpSuccess = responseData => {
   $('#sign-up-display').text('Sign up successful')
   console.log('response data: ', responseData)
 
+
+
   $('form').trigger('reset')
 
   setTimeout(() => {
@@ -25,6 +27,8 @@ const onSignUpFailure = err => {
 
 const onSignInSuccess = responseData => {
   $('#sign-in-display').text('Sign in successful')
+  $('#after-sign-in').show()
+  $('#before-sign-in').hide()
 
   store.user = responseData.user
   console.log('store is: ', store)
@@ -50,6 +54,8 @@ const onSignInFailure = err => {
 
 const onSignOutSuccess = () => {
   $('#sign-out-display').text('Sign out successful')
+  $('#before-sign-in').show()
+  $('#after-sign-in').hide()
 
   setTimeout(() => {
     $('#sign-out-display').text('')

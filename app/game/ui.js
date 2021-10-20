@@ -10,8 +10,10 @@ const onNewGameSuccess = (responseData) => {
 
 
 
-  $('#past-games-display').html('')
+  $('#view-past-games-display').html('')
   $('#game-message').text('New game success')
+  $('#game-display').css('display', 'flex')
+
 
   setTimeout(() => {
     $('#game-message').text('')
@@ -32,7 +34,9 @@ const onNewGameFailure = (err) => {
 
 const onUserTurnSuccess = (responseData) => {
   store.game = responseData.game
-  console.log(store.game)
+  console.log('response: ', store.game)
+
+
   if(!store.winner) {
     $('#game-message').text(`It is Player ${store.userToken}'s turn`)
 
@@ -56,7 +60,7 @@ const onViewGameAmountSuccess = responseData => {
 
 
   if(store.pastGames.length === 0) {
-    $('#view-games-display').text('You have played ' + store.pastGames.length + ' games!\nLet\'s start your first game')
+    $('#view-games-display').html(`<h3>'You have played ' + store.pastGames.length + ' games!\nLet\'s start your first game'</h3>`)
   } else if (store.pastGames.length > 0 && store.pastGames.length < 50) {
     $('#view-games-display').text('You have played ' + store.pastGames.length + ' games!\nJust getting started')
   } else if (store.pastGames.length > 100 && store.pastGames.length < 201) {
@@ -83,33 +87,42 @@ const onViewPastGamesSuccess = responseData => {
 
     gameHtml += `
 
-    <div id="past-game-${i}">
-      <h3>Game ID is: ${store.pastGames[i]._id}</h3>
-      <h5>Created: ${store.pastGames[i].createdAt}</h5>
-      <h5>Game Over: ${store.pastGames[i].over}</h5>
-    <div class="container">
-    <div class="row">
-      <div class="col-4 box row1 col1 dia1">${store.pastGames[i].cells[0]}</div>
-      <div class="col-4 box row1 col2">${store.pastGames[i].cells[1]}</div>
-      <div class="col-4 box row1 col3 dia2">${store.pastGames[i].cells[2]}</div>
-    </div>
+    <div class="past-games">
+      <div class="past-game-info">
+        <h1>Game Over: ${store.pastGames[i].over}</h1>
+        <br>
+        <h2>Game ID is: ${store.pastGames[i]._id}</h2>
+        <br>
+        <h2>Created: ${store.pastGames[i].createdAt}</h2>
 
-    <div class="row">
-      <div class="col-4 box row2 col1">${store.pastGames[i].cells[3]}</div>
-      <div class="col-4 box row2 col2 dia1 dia2">${store.pastGames[i].cells[4]}</div>
-      <div class="col-4 box row2 col3">${store.pastGames[i].cells[5]}</div>
-    </div>
+      </div>
 
-    <div class="row">
-      <div class="col-4 box row3 col1 dia2">${store.pastGames[i].cells[6]}</div>
-      <div class="col-4 box row3 col2">${store.pastGames[i].cells[7]}</div>
-      <div class="col-4 box row3 col3 dia1">${store.pastGames[i].cells[8]}</div>
+      <div class="past-game-board">
+        <div class="past-container">
+          <div class="row">
+            <div class="col-4 box row1 col1 dia1">${store.pastGames[i].cells[0]}</div>
+            <div class="col-4 box row1 col2">${store.pastGames[i].cells[1]}</div>
+            <div class="col-4 box row1 col3 dia2">${store.pastGames[i].cells[2]}</div>
+          </div>
+
+          <div class="row">
+            <div class="col-4 box row2 col1">${store.pastGames[i].cells[3]}</div>
+            <div class="col-4 box row2 col2 dia1 dia2">${store.pastGames[i].cells[4]}</div>
+            <div class="col-4 box row2 col3">${store.pastGames[i].cells[5]}</div>
+          </div>
+
+          <div class="row">
+            <div class="col-4 box row3 col1 dia2">${store.pastGames[i].cells[6]}</div>
+            <div class="col-4 box row3 col2">${store.pastGames[i].cells[7]}</div>
+            <div class="col-4 box row3 col3 dia1">${store.pastGames[i].cells[8]}</div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
   `
   if (store.pastGames[i].over === false) {
     gameHtml += `
-  <button class="past-game" id="${store.pastGames[i]._id}">Keep Playing</button>
+  <button class="continue-past-game" id="${store.pastGames[i]._id}">Keep Playing</button>
 
   <hr>`
   } else {
@@ -121,6 +134,7 @@ const onViewPastGamesSuccess = responseData => {
 
 
   $('#view-past-games-display').html(gameHtml)
+  $('#view-past-games').text('Hide Past Games')
 
 }
 
