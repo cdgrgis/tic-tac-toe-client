@@ -4,7 +4,7 @@ const gameEvents = require("./events")
 // RUNS WHEN NEW GAME API CALL IS SUCCESSFUL
 const onNewGameSuccess = (responseData) => {
   store.game = responseData.game
-  console.log('store.game: ', store.game)
+
 
   store.count = 0
 
@@ -22,8 +22,6 @@ const onNewGameSuccess = (responseData) => {
 
 // FUNCTION FOR NEW GAME API CALL FAILURE
 const onNewGameFailure = (err) => {
-  console.error(err)
-
   $('#error-display').text('New game failed')
 
   setTimeout(() => {
@@ -34,7 +32,7 @@ const onNewGameFailure = (err) => {
 // RUNS WHEN API UPDATE IS SUCCESSFUL
 const onUserTurnSuccess = (responseData) => {
   store.game = responseData.game
-  console.log('response: ', store.game)
+
 
   // UPDATE USER MESSAGE
   if(!store.winner) {
@@ -48,15 +46,12 @@ const onUserTurnSuccess = (responseData) => {
 
 // RUNS WHEN UPDATE API CALL IS FAILED
 const onUserTurnFailure = err => {
-  console.error(err)
-
   $('#error-display').text('Update Game Failed')
 }
 
 // RUNS WHEN API GET CALL IS SUCCESSFUL FOR GAME AMOUNT
 const onViewGameAmountSuccess = responseData => {
   store.pastGames = responseData.games
-  console.log("store.pastGames: ", store.pastGames)
 
   // OUTPUTS GAME AMOUNT AND MESSAGE
   if(store.pastGames.length === 0) {
@@ -72,14 +67,12 @@ const onViewGameAmountSuccess = responseData => {
 }
 // RUNS WHEN API GET FOR GAME AMOUNT IS FAILED
 const onViewGameAmountFailure = err => {
-  console.error(err)
   $('#view-games-error').text('View game amount failed')
 }
 
 // RUNS WHEN API GET FOR PAST GAMES IS SUCCESSFUL
 const onViewPastGamesSuccess = responseData => {
   store.pastGames = responseData.games
-  console.log("store.pastGames: ", store.pastGames)
   // DECLARING VARIABLE TO HOLD PAST GAME HTML
   let gameHtml = ''
   // ADDS HTML FOR EACH PAST GAME TO VARIABLE
@@ -141,14 +134,13 @@ const onViewPastGamesSuccess = responseData => {
 }
 // RUNS WHEN UPDATE API CALL FOR PAST GAMES IS FAILED
 const onViewPastGamesFailure = err => {
-  console.error(err)
+
   $('#view-past-games-error').text('View past games failed')
 }
 
 // RUNS WHEN GET SPECIFIC GAME API CALL IS SUCCESSFUL
 const onContinueGameSuccess = (responseData) => {
   store.game = responseData.game
-  console.log(store.game)
 
   // UPDATES BROWSER TEXT AND REVEALS BOARD
   $('#game-message').text('Continue game success')
@@ -159,10 +151,6 @@ const onContinueGameSuccess = (responseData) => {
   }, 5000)
 
   $('#winner-display').text('')
-
-
-
-
 
   $('#view-past-games-display').html('')
 
@@ -191,8 +179,6 @@ const onContinueGameSuccess = (responseData) => {
 
 // RUNS WHEN GET SPECIFIC GAME API CALL
 const onContinueGameFailure = err => {
-  console.error(err)
-
   $('#past-games-error').text('continue game failure')
 }
 // EXPORTS FUNCTIONS

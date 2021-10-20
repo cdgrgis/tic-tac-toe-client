@@ -7,7 +7,7 @@ const onSignUp = (event) => {
   event.preventDefault()
 
   const formData = getFormFields(event.target)
-  console.log('form data: ', formData)
+
 
   api.signUp(formData)
     .then(ui.onSignUpSuccess)
@@ -22,7 +22,6 @@ const onSignUp = (event) => {
 const onSignIn = (event) => {
   event.preventDefault()
   const formData = getFormFields(event.target)
-  console.log('formData ', formData)
 
   // SETS EMAIL AND PASSWORD TO BROWER'S SESSION STORAGE
   sessionStorage.setItem('email', formData.credentials.email)

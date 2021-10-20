@@ -3,7 +3,7 @@ const store = require('../store')
 // RUNS WHEN API SIGN UP IS SUCCESSFUL
 const onSignUpSuccess = responseData => {
   $('#sign-up-display').text('Sign up successful')
-  console.log('response data: ', responseData)
+
 
 
 
@@ -18,7 +18,6 @@ const onSignUpSuccess = responseData => {
 
 // RUNS WHEN API SIGN UP IS FAILED
 const onSignUpFailure = err => {
-  console.error(err)
   $('#sign-up-error-display').text('Sign up failed')
 
 
@@ -48,7 +47,6 @@ const onSignInSuccess = responseData => {
 
 // RUNS WHEN API SIGN IN IS FAILED
 const onSignInFailure = err => {
-  console.error(err)
  $('#sign-in-error-display').text('Sign in failed')
 
  setTimeout(() => {
@@ -70,7 +68,6 @@ const onSignOutSuccess = () => {
 
 // RUNS WHEN API SIGN OUT IS FAILED
 const onSignOutFailure = err => {
-  console.error(err)
   $('#sign-out-error-display').text('Sign out failed')
 
   setTimeout(() => {
@@ -80,7 +77,6 @@ const onSignOutFailure = err => {
 
 // RUNS WHEN API CHANGE PASSWORD IS SUCCESSFUL
 const onChangePwSuccess = responseData => {
-  console.log(responseData)
   $('#change-pw-display').text('Change password successful')
 
   $('form').trigger('reset')
@@ -92,7 +88,6 @@ const onChangePwSuccess = responseData => {
 
 // /RUS WHEN API CHANGE PASSWORD IS FAILED
 const onChangePwFailure = err => {
-  console.error(err)
 
   $('#change-pw-error-display').text('Change password failed')
 grn
