@@ -101,9 +101,6 @@ const onUserTurn = (event) => {
       .then(ui.onUserTurnSuccess)
       .catch(ui.onUserTurnFailure)
 
-
-
-
   // CHECKS IF GAME IS OVER
   } else if (winner) {
     $('#winner-display').text('Game over')
@@ -182,6 +179,7 @@ const onCustomTokens = (event) => {
   }, 5000)
 }
 
+// EXPORTS FUNCTIONS
 module.exports = {
   onNewGame,
   onUserTurn,

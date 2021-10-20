@@ -79,7 +79,7 @@ input {
 }
 
 .past-container {
-  height: 60vh;
+  height: 70vh;
 }
 
 .container {
@@ -116,21 +116,24 @@ input {
 
 }
 #game-display {
-  display: flex;
+  display: none;
 
-  margin: auto;
+  margin: 3em auto;
   align-content: center;
   justify-content: center;
   justify-items: center;
   align-items: center;
 
-  max-height: calc(80vh - 75px);
-  max-width: calc(80vh - 75px);
+  max-height: calc(100vh - 75px);
+  max-width: calc(100vh - 75px);
 }
 
 #game-message {
   font-size: 40px;
   color: var(--vivid);
+  margin: 0;
+  padding: 0;
+
 }
 
 #winner-container {

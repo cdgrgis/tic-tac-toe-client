@@ -1,6 +1,7 @@
 const config = require("../config")
 const store = require("../store")
 
+// API SIGN UP
 const signUp = (formData) => {
   return $.ajax({
     method: 'POST',
@@ -9,7 +10,7 @@ const signUp = (formData) => {
   })
 }
 
-
+// API SIGN IN
 const signIn = (formData) => {
   return $.ajax({
     method: 'POST',
@@ -18,7 +19,7 @@ const signIn = (formData) => {
   })
 }
 
-
+// API CHANGE PASSWORD
 const changePw = (formData) => {
   return $.ajax({
     method: 'PATCH',
@@ -30,7 +31,7 @@ const changePw = (formData) => {
   })
 }
 
-
+// API SIGN OUT
 const signOut = () => {
   return $.ajax({
     method: 'DELETE',
@@ -42,11 +43,11 @@ const signOut = () => {
 }
 
 
-
+// EXPORTS FUNCTIONS
 module.exports = {
   signUp,
   signIn,
   changePw,
   signOut,
-  
+
 }

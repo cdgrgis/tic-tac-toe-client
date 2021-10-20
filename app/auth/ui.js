@@ -1,5 +1,6 @@
 const store = require('../store')
 
+// RUNS WHEN API SIGN UP IS SUCCESSFUL
 const onSignUpSuccess = responseData => {
   $('#sign-up-display').text('Sign up successful')
   console.log('response data: ', responseData)
@@ -15,6 +16,7 @@ const onSignUpSuccess = responseData => {
 
 }
 
+// RUNS WHEN API SIGN UP IS FAILED
 const onSignUpFailure = err => {
   console.error(err)
   $('#sign-up-error-display').text('Sign up failed')
@@ -25,13 +27,15 @@ const onSignUpFailure = err => {
   }, 5000)
 }
 
+// RUNS WHEN API SIGN IN IS SUCCESSFUL
 const onSignInSuccess = responseData => {
   $('#sign-in-display').text('Sign in successful')
+  // SHOWS AFTER SIGN IN SECTION AND HIDES BEFORE SIGN IN SECTION
   $('#after-sign-in').show()
   $('#before-sign-in').hide()
 
   store.user = responseData.user
-  console.log('store is: ', store)
+
 
   $('form').trigger('reset')
 
@@ -42,6 +46,7 @@ const onSignInSuccess = responseData => {
   }, 5000)
 }
 
+// RUNS WHEN API SIGN IN IS FAILED
 const onSignInFailure = err => {
   console.error(err)
  $('#sign-in-error-display').text('Sign in failed')
@@ -51,9 +56,10 @@ const onSignInFailure = err => {
 }, 5000)
 }
 
-
+// RUNS WHEN API SIGN OUT IS SUCCESSFUL
 const onSignOutSuccess = () => {
   $('#sign-out-display').text('Sign out successful')
+  // HIDES AFTER SIGN IN SECTION AND SHOWS BEFORE SIGN IN SECTION
   $('#before-sign-in').show()
   $('#after-sign-in').hide()
 
@@ -62,6 +68,7 @@ const onSignOutSuccess = () => {
   }, 5000)
 }
 
+// RUNS WHEN API SIGN OUT IS FAILED
 const onSignOutFailure = err => {
   console.error(err)
   $('#sign-out-error-display').text('Sign out failed')
@@ -71,6 +78,7 @@ const onSignOutFailure = err => {
   }, 5000)
 }
 
+// RUNS WHEN API CHANGE PASSWORD IS SUCCESSFUL
 const onChangePwSuccess = responseData => {
   console.log(responseData)
   $('#change-pw-display').text('Change password successful')
@@ -82,7 +90,7 @@ const onChangePwSuccess = responseData => {
   }, 5000)
 }
 
-
+// /RUS WHEN API CHANGE PASSWORD IS FAILED
 const onChangePwFailure = err => {
   console.error(err)
 
@@ -94,7 +102,7 @@ grn
 }
 
 
-
+// EXPORTS FUNCTIONS
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,

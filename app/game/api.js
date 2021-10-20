@@ -1,7 +1,7 @@
 const store = require('../store')
 const config = require('../config')
 
-
+// API NEW GAME
 const newGame = () => {
   return $.ajax({
     method: 'POST',
@@ -13,7 +13,7 @@ const newGame = () => {
   })
 }
 
-
+// API UPDATE GAME
 const updateGame = (cell, userToken, winner) => {
   return $.ajax({
     method: 'PATCH',
@@ -33,6 +33,7 @@ const updateGame = (cell, userToken, winner) => {
   })
 }
 
+// API GET GAMES
 const viewGames = () => {
   return $.ajax({
     url: config.apiUrl + '/games',
@@ -43,6 +44,7 @@ const viewGames = () => {
 }
 
 
+// API GET SPECIFIC GAME
 const continueGame = (id) => {
   return $.ajax({
     url: config.apiUrl + '/games/' + id,
@@ -52,7 +54,7 @@ const continueGame = (id) => {
   })
 }
 
-
+// EXPORTS FUNCTIONS
 module.exports = {
   newGame,
   updateGame,

@@ -1,7 +1,7 @@
 const store = require("../store")
 const gameEvents = require("./events")
-const functions = require("./event-func")
 
+// RUNS WHEN NEW GAME API CALL IS SUCCESSFUL
 const onNewGameSuccess = (responseData) => {
   store.game = responseData.game
   console.log('store.game: ', store.game)
@@ -9,7 +9,7 @@ const onNewGameSuccess = (responseData) => {
   store.count = 0
 
 
-
+  // UPDATE TEXT ON BROWSER
   $('#view-past-games-display').html('')
   $('#game-message').text('New game success')
   $('#game-display').css('display', 'flex')
@@ -20,7 +20,7 @@ const onNewGameSuccess = (responseData) => {
   }, 5000)
 }
 
-
+// FUNCTION FOR NEW GAME API CALL FAILURE
 const onNewGameFailure = (err) => {
   console.error(err)
 
@@ -31,12 +31,12 @@ const onNewGameFailure = (err) => {
   }, 5000)
 }
 
-
+// RUNS WHEN API UPDATE IS SUCCESSFUL
 const onUserTurnSuccess = (responseData) => {
   store.game = responseData.game
   console.log('response: ', store.game)
 
-
+  // UPDATE USER MESSAGE
   if(!store.winner) {
     $('#game-message').text(`It is Player ${store.userToken}'s turn`)
 
@@ -46,19 +46,19 @@ const onUserTurnSuccess = (responseData) => {
   }
 }
 
-
+// RUNS WHEN UPDATE API CALL IS FAILED
 const onUserTurnFailure = err => {
   console.error(err)
 
   $('#error-display').text('Update Game Failed')
 }
 
-
+// RUNS WHEN API GET CALL IS SUCCESSFUL FOR GAME AMOUNT
 const onViewGameAmountSuccess = responseData => {
   store.pastGames = responseData.games
   console.log("store.pastGames: ", store.pastGames)
 
-
+  // OUTPUTS GAME AMOUNT AND MESSAGE
   if(store.pastGames.length === 0) {
     $('#view-games-display').html(`<h3>'You have played ' + store.pastGames.length + ' games!\nLet\'s start your first game'</h3>`)
   } else if (store.pastGames.length > 0 && store.pastGames.length < 50) {
@@ -70,19 +70,19 @@ const onViewGameAmountSuccess = responseData => {
   }
 
 }
-
+// RUNS WHEN API GET FOR GAME AMOUNT IS FAILED
 const onViewGameAmountFailure = err => {
   console.error(err)
   $('#view-games-error').text('View game amount failed')
 }
 
-
+// RUNS WHEN API GET FOR PAST GAMES IS SUCCESSFUL
 const onViewPastGamesSuccess = responseData => {
   store.pastGames = responseData.games
   console.log("store.pastGames: ", store.pastGames)
-
+  // DECLARING VARIABLE TO HOLD PAST GAME HTML
   let gameHtml = ''
-
+  // ADDS HTML FOR EACH PAST GAME TO VARIABLE
   for(let i=0; i<store.pastGames.length; i++) {
 
     gameHtml += `
@@ -120,6 +120,7 @@ const onViewPastGamesSuccess = responseData => {
       </div>
     </div>
   `
+  // RUNS IF GAME IS NOT OVER AND ADDS BUTTON
   if (store.pastGames[i].over === false) {
     gameHtml += `
   <button class="continue-past-game" id="${store.pastGames[i]._id}">Keep Playing</button>
@@ -132,24 +133,26 @@ const onViewPastGamesSuccess = responseData => {
   }
 }
 
-
+  // INPUTS HTML TO BROWSER
   $('#view-past-games-display').html(gameHtml)
+  // CHANGES VALUE OF PAST GAMES BUTTON
   $('#view-past-games').text('Hide Past Games')
 
 }
-
+// RUNS WHEN UPDATE API CALL FOR PAST GAMES IS FAILED
 const onViewPastGamesFailure = err => {
   console.error(err)
   $('#view-past-games-error').text('View past games failed')
 }
 
-
+// RUNS WHEN GET SPECIFIC GAME API CALL IS SUCCESSFUL
 const onContinueGameSuccess = (responseData) => {
   store.game = responseData.game
   console.log(store.game)
 
-
+  // UPDATES BROWSER TEXT AND REVEALS BOARD
   $('#game-message').text('Continue game success')
+  $('#game-display').css('display', 'flex')
 
   setTimeout(() => {
     $('#game-message').text('')
@@ -163,6 +166,7 @@ const onContinueGameSuccess = (responseData) => {
 
   $('#view-past-games-display').html('')
 
+  // iNPUTS TEXT OF PAST GAME TO GAME BOARD
   $('#box1').text(store.game.cells[0])
   store.takenSquareArray[0] = store.game.cells[0]
   $('#box2').text(store.game.cells[1])
@@ -185,13 +189,13 @@ const onContinueGameSuccess = (responseData) => {
   store.takenSquareArray[8] = store.game.cells[8]
 }
 
-
+// RUNS WHEN GET SPECIFIC GAME API CALL
 const onContinueGameFailure = err => {
   console.error(err)
 
   $('#past-games-error').text('continue game failure')
 }
-
+// EXPORTS FUNCTIONS
 module.exports = {
   onNewGameSuccess,
   onNewGameFailure,
