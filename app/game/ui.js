@@ -145,6 +145,8 @@ const onContinueGameSuccess = (responseData) => {
   // UPDATES BROWSER TEXT AND REVEALS BOARD
   $('#game-message').text('Continue game success')
   $('#game-display').css('display', 'flex')
+  $('.box').css('background-color', 'var(--purple)')
+
 
   setTimeout(() => {
     $('#game-message').text('')
