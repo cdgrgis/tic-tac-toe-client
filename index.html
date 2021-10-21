@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <section id="before-sign-in">
+        <form id="sign-up">
+          <fieldset>
+            <legend>Sign Up</legend>
+            <input name="credentials[email]" type="email" placeholder="Email" required>
+            <input name="credentials[password]" type="password" placeholder="Password" required>
+            <input name="credentials[password_confirmation]" type="password" placeholder="Password Confirmation" required>
+
+            <button>Sign Up</button>
+            <div id="sign-up-display"></div>
+            <div id="sign-up-error-display"></div>
+          </fieldset>
+        </form>
+
+        <hr>
+
+        <form id="sign-in">
+          <fieldset>
+            <legend>Sign In</legend>
+            <input name="credentials[email]" type="email" placeholder="Email" required>
+            <input name="credentials[password]" type="password" placeholder="Password" required>
+
+            <button>Sign In</button>
+            <div id="sign-in-display"></div>
+            <div id="sign-in-error-display"></div>
+          </fieldset>
+        </form>
+
+      </section>
+
+      <section id="after-sign-in">
+
+        <hr>
+
+        <form id="change-pw">
+          <fieldset>
+            <legend>Change Password</legend>
+            <input name="passwords[old]" type="password" placeholder="Old password" required>
+            <input name="passwords[new]" type="password" placeholder="New password" required>
+
+            <button>Change Password</button>
+            <div id="change-pw-display"></div>
+            <div id="change-pw-error-display"></div>
+          </fieldset>
+        </form>
+
+        <hr>
+
+        <fieldset>
+          <legend>Sign Out</legend>
+          <button id="sign-out">Sign Out</button>
+          <div id="sign-out-display"></div>
+          <div id="sign-out-error-display"></div>
+        </fieldset>
+
+        <hr>
+
+        <form id="custom-tokens">
+          <fieldset>
+            <legend>Custom User Tokens</legend>
+            <input name="player1-token" type="text" placeholder="player 1">
+            <input name="player2-token" type="text" placeholder="player 2">
+            <button>Enter Tokens</button>
+          </fieldset>
+          <div id="custom-tokens-display"></div>
+        </form>
+
+        <hr>
+
+        <fieldset>
+          <legend>View Number of Games</legend>
+          <button id="view-game-amount">Game Amount</button>
+          <div id="view-games-display"></div>
+          <div id="view-games-error"></div>
+        </fieldset>
+
+        <hr>
+
+        <fieldset>
+          <legend>View Past Games</legend>
+          <button id="view-past-games">View Past Games</button>
+          <div id="view-past-games-display"></div>
+          <div id="view-past-games-error"></div>
+        </fieldset>
+
+        <hr>
+
+        <fieldset>
+          <legend>New Game</legend>
+          <button id="new-game">New Game</button>
+        </fieldset>
+
+
+        <br>
+
+        <hr>
+
+        <br>
+
+        <div id="game-message"> </div>
+        <div id="game-flex">
+          <section id="game-display">
+            <div class="container">
+              <div class="row">
+                <div class="col-4 box row1 col1 dia1" id="box1"></div>
+                <div class="col-4 box row1 col2" id="box2"></div>
+                <div class="col-4 box row1 col3 dia2" id="box3"></div>
+              </div>
+
+              <div class="row">
+                <div class="col-4 box row2 col1" id="box4"></div>
+                <div class="col-4 box row2 col2 dia1 dia2" id="box5"></div>
+                <div class="col-4 box row2 col3" id="box6"></div>
+              </div>
+
+              <div class="row">
+                <div class="col-4 box row3 col1 dia2" id="box7"></div>
+                <div class="col-4 box row3 col2" id="box8"></div>
+                <div class="col-4 box row3 col3 dia1" id="box9"></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <div id="winner-container">
+        <div id="winner-display"></div>
+        <div id="game-error-display"></div>
+      </div>
+
+    </body>
+</html>
